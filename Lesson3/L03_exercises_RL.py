@@ -1,0 +1,178 @@
+## LIST EXERCISES
+
+
+# Prints out all the items in the list.
+def list_print(lst):
+    for item in lst:
+        print(item)
+
+
+# Sums up all the numbers in the list and returns the sum.
+def list_sum(lst):
+    # TODO: finish this!
+    sum = 0
+    for item in lst:
+        sum = sum + item
+    return sum
+
+
+# Finds and returns the greatest number in the list.
+# You can assume all numbers in the list are positive.
+def find_list_max(lst):
+    # TODO: finish this!
+    max = 0
+    for item in lst:
+        if item > max:
+            max = item
+    return max
+
+
+
+## DICT EXERCISES
+
+
+# Prints out each corresponding key/value pair in a dict.
+def dict_print(d):
+    for key, value in d.items():
+        print("key: " + str(key) + " value: " + str(value))
+
+
+# Returns the key that has the highest value in the dict.
+# You can assume all values in the dict are positive numbers.
+def key_max_value(d):
+    # TODO: finish this!
+    max = 0
+    key_max = 0
+    for key, value in d.items():
+        print("key: " + str(key) + " value: " + str(value))
+        if value > max:
+            print("Found a new max = " + str(value) + " at key = " + str(key))
+            max = value
+            key_max = key
+    return key_max
+
+
+# Counts how many of each item are in the given list,
+# Returns them as a dict of items mapping to the number of times they appeared.
+def count_items(lst):
+    # TODO: finish this!
+    list_print(lst)
+    count_dict = {}
+    for item in lst:
+        # if key in d:
+        #     d[key] += 1
+        # else:
+        #     d[key] = 1
+        if item in count_dict:
+            count_dict[item] += 1
+        else:
+            count_dict[item] = 1
+        print("item = ", item, "count_dict[item] = ", count_dict[item])
+        # RL The cheating way is to use the builtin dict count method
+        # count_dict[item] = lst.count(item)
+        # print("item = ", item, "lst.count(item) = ", lst.count(item))
+    dict_print(count_dict)
+    return count_dict
+
+
+'''
+The below code is just to test your code. You don't need to touch these.
+'''
+
+def test_list_sum(tests):
+    print("Testing list_sum...")
+    test_num = 1
+    for test in tests:
+        print("test " + str(test_num))
+        if list_sum(test[0]) == test[1]:
+            print("PASS!")
+        else:
+            print("FAIL!")
+            print("failed on " + str(test[0]))
+            print("answer was " + str(list_sum(test[0])) + ", but it should have been " + str(test[1]))
+            return False
+        test_num += 1
+    return True
+
+def test_list_max(tests):
+    print("Testing list_max....")
+    test_num = 1
+    for test in tests:
+        print("test " + str(test_num))
+        if find_list_max(test[0]) == test[1]:
+            print("PASS!")
+        else:
+            print("FAIL!")
+            print("failed on " + str(test[0]))
+            print("answer was " + str(find_list_max(test[0])) + ", but it should have been " + str(test[1]))
+            return False
+        test_num += 1
+    return True
+
+def test_key_max_value(tests):
+    print("Testing key_max_value....")
+    test_num = 1
+    for test in tests:
+        print("test " + str(test_num))
+        if key_max_value(test[0]) == test[1]:
+            print("PASS!")
+        else:
+            print("FAIL!")
+            print("failed on " + str(test[0]))
+            print("answer was " + str(key_max_value(test[0])) + ", but it should have been " + str(test[1]))
+            return False
+        test_num += 1
+    return True
+
+def test_count_items(tests):
+    print("Testing count_items....")
+    test_num = 1
+    for test in tests:
+        print("test " + str(test_num))
+        if count_items(test[0]) == test[1]:
+            print("PASS!")
+        else:
+            print("FAIL!")
+            print("failed on " + str(test[0]))
+            print("answer was " + str(count_items(test[0])) + ", but it should have been " + str(test[1]))
+            return False
+        test_num += 1
+    return True
+
+def test_all():
+    all_passed = True
+    if test_list_sum([([1,2,3], 6), ([], 0), ([-82, 4, 9 ,9 ,9 ,9], -42)]):
+        print("list_sum works!")
+    else:
+        print("whoops, list sum doesn't work :(")
+        all_passed = False
+    print("____________________________________________________________________\n")
+
+    if test_list_max([([2,2,2,8,4], 8), ([1], 1), ([4, 9 ,9 ,7 ,9], 9)]):
+        print("list_max works!")
+    else:
+        print("whoops, list max doesn't work :(")
+        all_passed = False
+    print("____________________________________________________________________\n")
+
+    if test_key_max_value([({1:2,2:3,4:1,9:2}, 2), ({"dog":20, "cat":10, "meep":1000}, "meep")]):
+        print("key_max_value works!")
+    else:
+        print("whoops, key_max_value doesn't work :(")
+        all_passed = False
+    print("____________________________________________________________________\n")
+
+
+    if test_count_items([([1,2,3,2,3,4,8], {1:1,2:2,3:2,4:1,8:1}), ([], {}), ([4,4,4,2,2,89,1], {4:3, 2:2, 89:1 ,1:1})]):
+        print("count_items works")
+    else:
+        print("whoops, count_items doesn't work :(")
+    print("____________________________________________________________________\n")
+
+
+    if all_passed:
+        print("all the tests passed!")
+    else:
+        print("looks like not all the tests passed :(")
+
+test_all()
