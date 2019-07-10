@@ -21,7 +21,11 @@ def in_range(lower, upper, num):
 # Takes in a list of numbers and returns a list of only the even ones.
 def even_elements(nums):
     # TODO: implement this!
-    return []
+    even_nums = []
+    for num in nums:
+        if num%2==0:
+            even_nums.append(num) 
+    return even_nums
 
 
 # Takes in a string and returns the most common letter occuring in the string.
@@ -32,10 +36,19 @@ def most_common_letter(str):
 
 
 # Takes in a list of numbers and returns the maximum difference between any two numbers in the list.
+    
+
 def max_diff(nums):
     # TODO: implement this!
-    return -1
-
+    cur_min = nums[0]
+    cur_max = nums[0]
+    for num in nums:
+        if num > cur_max:
+            cur_max = num
+        if num < cur_min:
+            cur_min = num
+    print("cur_max = ", cur_max, "cur_min = ", cur_min, "max_diff = ", cur_max - cur_min)
+    return cur_max - cur_min
 
 # Prints an hourglass made out of '*' characters with a base the size of the number supplied * 2.
 def hourglass(size):
