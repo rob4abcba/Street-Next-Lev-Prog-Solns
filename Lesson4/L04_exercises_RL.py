@@ -6,15 +6,19 @@ def square_if_odd(num):
         num = num*num
     else:
         print("Even")
+    print(num)
     return num
 
 
 # Returns whether the given number is within the range of lower and upper inclusive (True or False).
 def in_range(lower, upper, num):
     # TODO: implement this!
+    print("(lower, upper, num) = ", lower, upper, num)
     if num >= lower and num <= upper:
+        print("True")
         return True
     else:
+        print("False")
         return False
 
 
@@ -25,14 +29,55 @@ def even_elements(nums):
     for num in nums:
         if num%2==0:
             even_nums.append(num) 
+    print("even_nums = ", even_nums)
     return even_nums
 
+# Need these routines from L03:
+
+# Prints out each corresponding key/value pair in a dict.
+def dict_print(d):
+    for key, value in d.items():
+        print("key: " + str(key) + " value: " + str(value))
+
+# Returns the key that has the highest value in the dict.
+# (You can assume all values in the dict are positive numbers.)
+def key_max_value(d):
+    # TODO: finish this!
+    max = 0
+    key_max = 0
+    for key, value in d.items():
+        print("key: " + str(key) + " value: " + str(value))
+        if value > max:
+            print("Found a new max = " + str(value) + " at key = " + str(key))
+            max = value
+            key_max = key
+    return key_max
 
 # Takes in a string and returns the most common letter occuring in the string.
 # If there's a tie, you may return any of them.
 def most_common_letter(str):
     # TODO: implement this!
-    return 'a'
+    # Python3 code to demonstrate  
+    # each occurrence frequency using  
+    # naive method  
+  
+    # using naive method to get count  
+    # of each element in string  
+    all_freq = {} 
+  
+    for i in str: 
+        if i in all_freq: 
+            all_freq[i] += 1
+        else: 
+            all_freq[i] = 1
+  
+    # printing result  
+    # print ("Count of all characters in GeeksforGeeks is :\n " +  all_freq) 
+    dict_print(all_freq)
+
+    key_max_value(all_freq)
+
+    return key_max_value(all_freq)
 
 
 # Takes in a list of numbers and returns the maximum difference between any two numbers in the list.
