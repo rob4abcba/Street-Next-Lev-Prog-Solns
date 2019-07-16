@@ -98,9 +98,15 @@ def max_diff(nums):
 # Prints an hourglass made out of '*' characters with a base the size of the number supplied * 2.
 def hourglass(size):
     # TODO: implement this!
-    print("not implemented")
+    line_length = size
+    while line_length > 0:
+        asterisk_count = 0
+        while asterisk_count < line_length:
+            print("x")
+            asterisk_count = asterisk_count + 1
+        line_length = line_length - 1
 
-
+hourglass(3)
 
 
 

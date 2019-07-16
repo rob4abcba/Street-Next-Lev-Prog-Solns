@@ -91,9 +91,13 @@ fn_to_tests = [
         ([1, 3, 5], 4),
         ([-2, 0], 2),
     ]),
+        (hourglass, [
+        ("3", "*"),
+    ]),
 ]
 
 if __name__ == "__main__":
     for fn, tests in fn_to_tests:
         test_function(fn, tests)
+        hourglass(3)
         print()

@@ -102,7 +102,7 @@ Once you're done writing that, go ahead and run exercises.py again to test your 
 
 One of the other important data structures in Python is called a **dictionary** (or "dict" for short). If you're familiar with maps in other languages, such as Java, dictionaries in Python are very similar.
 
-Like lists, dictionaries are a data structure that can hold several seperate pieces of data. The difference is that lists have these pieces of data *ordered*, so we can write things like "I want the first element of this list" and have a clear answer. Dictionaries are different because they are *unordered*, and instead have what we call **keys**.
+Like lists, dictionaries are a data structure that can hold several separate pieces of data. The difference is that lists have these pieces of data *ordered*, so we can write things like "I want the first element of this list" and have a clear answer. Dictionaries are different because they are *unordered*, and instead have what we call **keys**.
 
 Keys are a way of labeling each "data slot" of a dictionary so that we know how to refer to and access each piece of data. If think of a list as a cabinet with several shelves in a row that are all ordered by number, think of a dictionary as a cabinet where we label each shelf with not necessarily a number, but a specific label that says something like "books" or "cleaning supplies".
 
