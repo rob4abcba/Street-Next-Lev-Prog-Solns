@@ -11,11 +11,30 @@ def linear_search(nums, target):
 # number (target) and returns whether or not the list contains the number.
 def binary_search(nums, target):
     # TODO: implement this!
+    l = 0
+    r = len(nums)
+    print("nums, target = ", nums, target)
+    while l <= r: 
+  
+        mid = int(l + (r - l)/2)
+        print("l, r, mid = ", l, r, mid)
+        print("nums[mid] = ", nums[mid])
+          
+        # Check if target is present at mid 
+        if nums[mid] == target: 
+            return True 
+  
+        # If target is greater, ignore left half 
+        elif nums[mid] < target: 
+            l = mid + 1
+  
+        # If target is smaller, ignore right half 
+        else: 
+            r = mid - 1
+      
+    # If we reach here, then the element 
+    # was not present 
     return False
-
-
-
-
 
 
 # Code below here just tests if your code works properly. You don't need to
