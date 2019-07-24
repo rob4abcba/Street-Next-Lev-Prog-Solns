@@ -88,7 +88,7 @@ def timerFired(canvas):
         redrawAll(canvas)
     # whether or not game is over, call next timerFired
     # (or we'll never call timerFired again!)
-    delay = 150 # milliseconds
+    delay = 300 # milliseconds RL Increase delay to make snake slower.
     canvas.after(delay, timerFired, canvas) # pause, then call timerFired again
 
 def redrawAll(canvas):
@@ -131,7 +131,8 @@ def loadSnakeBoard(canvas):
     cols = canvas.data["cols"]
     snakeBoard = [ ]
     for row in range(rows): snakeBoard += [[0] * cols]
-    snakeBoard[rows/2][cols/2] = 1
+    # List indices must be int not float
+    snakeBoard[int(rows/2)][int(cols/2)] = 1 # List indices must be int not float
     canvas.data["snakeBoard"] = snakeBoard
     findSnakeHead(canvas)
     placeFood(canvas)
@@ -212,7 +213,7 @@ def run(rows, cols):
     root.bind("<Button-1>", mousePressed)
     root.bind("<Key>", keyPressed)
     timerFired(canvas)
-    # and launch the app
+    # and launch the app (RL: Run the main loop.)
     root.mainloop()  # This call BLOCKS (so your program waits until you close the window!)
 
 run(8,16)
