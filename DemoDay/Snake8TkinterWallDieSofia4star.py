@@ -191,6 +191,7 @@ def init(canvas):
 def run(rows, cols):
     # create the root and the canvas
     root = Tk()
+    root.title("My Awesome Snake Game written in Python using Tkinter")
     margin = 5
     cellSize = 30
     canvasWidth = 2*margin + cols*cellSize
