@@ -173,8 +173,9 @@ def printInstructions():
     print("Eat food to grow.")
     print("Stay on the board!")
     print("And don't crash into yourself!")
-    print("Press 'd' for debug mode.")
-    print("Press 'r' to restart.")
+    print("Restart in DEBUG mode to see number codes of squares")
+    print("With cursor inside game square, press 'd' for debug mode.")
+    print("then press 'r' to restart.")
 
 def init(canvas):
     printInstructions()
@@ -192,6 +193,7 @@ def run(rows, cols):
     # create the root and the canvas
     root = Tk()
     root.title("My Awesome Snake Game written in Python using Tkinter")
+    root.configure(background="red")
     margin = 5
     cellSize = 30
     canvasWidth = 2*margin + cols*cellSize
