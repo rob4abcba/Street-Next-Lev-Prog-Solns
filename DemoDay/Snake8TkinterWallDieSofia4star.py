@@ -193,7 +193,12 @@ def run(rows, cols):
     # create the root and the canvas
     root = Tk()
     root.title("My Awesome Snake Game written in Python using Tkinter")
-    root.configure(background="red")
+    root.configure(background="red") #RL This has no effect.
+
+    # RL: Add GIF.
+    # photo1 = PhotoImage(file="~/Desktop/ch-outline.gif")
+    # Label (root, image=photo1, bg="black") .grid(row=0, column=0, sticky=W)
+    
     margin = 5
     cellSize = 30
     canvasWidth = 2*margin + cols*cellSize
@@ -219,4 +224,4 @@ def run(rows, cols):
     # and launch the app (RL: Run the main loop.)
     root.mainloop()  # This call BLOCKS (so your program waits until you close the window!)
 
-run(8,16)
+run(8,10)  # Dimensions of game field  run(#rows,#columns)
