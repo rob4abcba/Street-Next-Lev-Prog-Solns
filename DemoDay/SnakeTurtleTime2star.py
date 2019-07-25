@@ -21,11 +21,11 @@ wn.tracer(0) # Turns off the screen updates
 # Snake head
 head = turtle.Turtle()
 head.speed(0) #RL: Animation speed of turtle module.  NOT speed of snake.  0 = fastest
-head.shape("triangle") #RL: Shape of snake head
+head.shape("circle") #RL: Shape of snake head
 head.color("purple")  #RL: Color of snake head
 head.penup() #RL: penup so turtle does NOT draw anything as it moves
 head.goto(0,0) #RL: Start with snake head at center of screen
-head.direction = "stop" #RL: Start game with head stopped
+head.direction = "up" #RL: stop = Start game with head stopped; right= Moving right
 
 # Snake food
 food = turtle.Turtle()
