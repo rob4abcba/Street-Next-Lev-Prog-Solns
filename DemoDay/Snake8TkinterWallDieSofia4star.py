@@ -199,6 +199,15 @@ def run(rows, cols):
     # photo1 = PhotoImage(file="~/Desktop/ch-outline.gif")
     # Label (root, image=photo1, bg="black") .grid(row=0, column=0, sticky=W)
     
+    # RL: Create Label
+    # Label (root, text="RL Text", bg="black", fg="white", font="none 12 bold") .grid(row=1, column=0, sticky=W)
+
+    # RL: Create a text entry box
+    # textentry = Entry(root, width=20, bg="white")
+    # textentry.grid(row=2, column=0, sticky=W)
+
+
+
     margin = 5
     cellSize = 30
     canvasWidth = 2*margin + cols*cellSize
