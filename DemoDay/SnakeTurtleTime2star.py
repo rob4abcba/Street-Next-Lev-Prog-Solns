@@ -1,10 +1,11 @@
 # Simple Snake Game in Python 3 for Beginners
+# YouTube: Python Game Programming Tutorial: Snake/Wormy Game Part X
 
 import turtle
-import time
+import time    #RL: Time module so can introduce delay
 import random
 
-delay = 0.1
+delay = 0.1  #RL: Define variable to put into time.sleep function of time module
 
 # Score
 score = 0
@@ -12,19 +13,19 @@ high_score = 0
 
 # Set up the screen
 wn = turtle.Screen()
-wn.title("Snake Game")
-wn.bgcolor("green")
-wn.setup(width=600, height=600)
+wn.title("Snake Game by RL")
+wn.bgcolor("orange") #RL Color of playing field
+wn.setup(width=600, height=600) #RL In pixels
 wn.tracer(0) # Turns off the screen updates
 
 # Snake head
 head = turtle.Turtle()
-head.speed(0)
-head.shape("square")
-head.color("black")
-head.penup()
-head.goto(0,0)
-head.direction = "stop"
+head.speed(0) #RL: Animation speed of turtle module.  NOT speed of snake.  0 = fastest
+head.shape("triangle") #RL: Shape of snake head
+head.color("purple")  #RL: Color of snake head
+head.penup() #RL: penup so turtle does NOT draw anything as it moves
+head.goto(0,0) #RL: Start with snake head at center of screen
+head.direction = "stop" #RL: Start game with head stopped
 
 # Snake food
 food = turtle.Turtle()
@@ -89,11 +90,11 @@ wn.onkeypress(go_right, "d")
 
 # Main game loop
 while True:
-    wn.update()
+    wn.update() #RL: Everytime through loop, update the snake
 
     # Check for a collision with the border
     if head.xcor()>290 or head.xcor()<-290 or head.ycor()>290 or head.ycor()<-290:
-        time.sleep(1)
+        time.sleep(1) #RL: Function from imported time module
         head.goto(0,0)
         head.direction = "stop"
 
@@ -158,7 +159,7 @@ while True:
     # Check for head collision with the body segments
     for segment in segments:
         if segment.distance(head) < 20:
-            time.sleep(1)
+            time.sleep(1) #RL: Function from imported time module
             head.goto(0,0)
             head.direction = "stop"
         
@@ -179,6 +180,6 @@ while True:
             pen.clear()
             pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
 
-    time.sleep(delay)
+    time.sleep(delay) #RL: Function from imported time module
 
-wn.mainloop()
+wn.mainloop()  #RL To keep the window open for us.
